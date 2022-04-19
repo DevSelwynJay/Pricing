@@ -1,0 +1,271 @@
+//VARIABLES
+$font-family-primary: "Noto Sans", sans-serif;
+$font-family-secondary: "Montserrat", sans-serif;
+$black: #000;
+$grey: #636363;
+$light-grey: #f7f7f7;
+
+/*****GLOBALS*****/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px; 
+  font-family: $font-family-primary;
+  color: $black !important;
+}
+
+section {
+  padding: 70px 1.5rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+tr {
+  td {
+    width: 33.33%;
+    position: relative;
+  }
+}
+
+.fa-check {
+  color: #a7ca1a;
+  font-size: 18px;
+}
+
+.best-value {
+  background-color: #a7ca1a;
+  color: white;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  width: 100%;
+  padding: 0.2rem 1rem;
+}
+
+/****BUTTONS*****/
+.button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  width: 80%;
+  text-align: center;
+  background-color: $light-grey;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 6px;
+  transition: all 300ms ease;
+  margin-bottom: 0.8rem;
+}
+.button.button-purple {
+  background-color: #7d6e99;
+  &:hover {
+    background-color: #6f6288;
+  }
+}
+.button.button-green {
+  background-color: #a7ca1a;
+  &:hover {
+    background-color: #99b916;
+  }
+}
+.button.button-blue {
+  background-color: #4c7da5;
+  &:hover {
+    background-color: #426d91;
+  }
+}
+
+/*****FONT SIZES*****/
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+  font-family: $font-family-secondary;
+  color: $grey;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: $font-family-secondary;
+  color: $black;
+}
+
+/*****TOP*****/
+table.top {
+  td {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    border: 2px solid $light-grey;
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 100%;
+    }
+
+    &:first-child {
+      @media (max-width: 970px) {
+        display: none;
+      }
+    }
+
+    p.toggle {
+      margin: 0;
+      padding: 0.5rem;
+      cursor: pointer;
+      display: none;
+      position: relative;
+      transition: all ease-in 300ms;
+
+      &::before {
+        content: "\f078";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: relative;
+        color: $grey;
+        margin-right: 0.4rem;
+        transition: all ease-in 300ms;
+      }
+
+      span {
+        color: #a7ca1a;
+        margin-left: 0.2rem;
+      }
+
+      @media (max-width: 970px) {
+        display: block;
+      }
+    }
+
+    .show-content {
+      display: none;
+      margin-bottom: 0.3rem;
+    }
+
+    .show-content.visible {
+      display: flex;
+      justify-content: space-evenly;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      color: $grey;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+/*****MIDDLE*****/
+table.middle {
+  @media (max-width: 970px) {
+    display: none;
+  }
+
+  td {
+    border: 2px solid $light-grey;
+  }
+
+  thead {
+    background-color: $light-grey;
+    th {
+      &.control {
+        text-align: left;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          background-color: #f0eeee;
+        }
+
+        &::before {
+          content: "\f078";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+          left: 1.3rem;
+          color: $grey;
+          transition: all ease-in 300ms;
+        }
+
+        span {
+          color: #a7ca1a;
+          margin-left: 0.3rem;
+        }
+      }
+      &.control.active {
+        &::before {
+          transform: rotate(-180deg);
+        }
+      }
+
+      padding: 0.7rem 3rem;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+  tbody {
+    background-color: #fff;
+    visibility: collapse;
+    color: $grey !important;
+
+    td {
+      padding: 0.7rem 3rem;
+      text-align: center;
+
+      &:first-child {
+        text-align: left;
+      }
+    }
+  }
+  tbody.visible {
+    visibility: visible;
+  }
+}
+
+/*****BOTTOM*****/
+table.bottom {
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  td {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    border: 2px solid $light-grey;
+
+    &:first-child {
+      @media (max-width: 970px) {
+        display: none;
+      }
+    }
+  }
+}

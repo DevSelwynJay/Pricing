@@ -1,0 +1,2 @@
+const toggle=document.querySelectorAll(".toggle");for(const e of toggle)e.addEventListener("click",(function(){const t=e.attributes.name.nodeValue,o=document.querySelectorAll('.show-content[name="'+t+'"]');for(const t of o)t.classList.toggle("visible"),e.classList.toggle("active")}));
+//# sourceMappingURL=all.js.map
